@@ -1,2 +1,4 @@
 # ideavimrc
-my IdeaVIM config for JetBrains IDEs
+my IdeaVim config for JetBrains IDEs
+
+[IdeaVim docs.](https://github.com/JetBrains/ideavim)
