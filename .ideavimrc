@@ -1,0 +1,81 @@
+" line number
+set nu
+set relativenumber
+
+" set leader to space
+let mapleader=" "
+
+" format code
+:nmap <leader>fm <Action>(ReformatCode)
+
+" center while page jumping up/down
+:nmap <C-d> <C-d>zz
+:nmap <C-u> <C-u>zz
+
+" center when moving between search results
+:nmap n nzz
+:nmap N Nzz
+
+" toggle the breakpoint on the current line
+:nmap <leader>bp <Action>(ToggleLineBreakpoint)
+
+" floating diagnostic
+:nmap <leader>fd <Action>(ShowErrorDescription)
+
+" quick implementations
+:nmap <leader>fi <Action>(QuickImplementations)
+
+" Don't copy the replaced text after pasting in visual mode
+:xmap p p:let @+=@0<CR>:let @"=@0<CR>
+
+" move cursor while in insert mode
+:imap <C-l> <Right>
+:imap <C-k> <Up>
+:imap <C-j> <Down>
+:imap <C-h> <Left>
+
+" close buffer
+:nmap <leader>x <Action>(CloseContent)
+
+" go to file
+:nmap <leader>ff <Action>(GotoFile)
+
+" recent files
+:nmap <leader>fo <Action>(RecentFiles)
+
+" toggle file tree
+" :nmap <C-n> <Action>(ActivateProjectToolWindow)
+
+" next buffer
+:nmap <TAB> <Action>(NextTab)
+:nmap <S-Tab> <Action>(PreviousTab)
+
+" window right
+:nmap <C-l> <C-w>l
+" window up
+:nmap <C-k> <C-w>k
+" window down
+:nmap <C-j> <C-w>j
+" window left
+:nmap <C-h> <C-w>h
+
+" find in all files
+:nmap <leader>fw <Action>(FindInPath)
+
+" comments
+:nmap <leader>/ <Action>(CommentByLineComment)
+:vmap <leader>/ <Action>(CommentByBlockComment)
+
+" rename
+:nmap <leader>ra <Action>(RenameElement)
+
+" run it
+:nmap <leader>ri <Action>(Run)
+" debug it
+:nmap <leader>di <Action>(Debug)
+" stop it
+:nmap <leader>si <Action>(Stop)
+
+" generate
+:nmap <leader>ca <Action>(Generate)
+
