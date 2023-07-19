@@ -7,6 +7,7 @@ let mapleader=" "
 
 " format code
 :nmap <leader>fm <Action>(ReformatCode)
+:vmap <leader>fm <Action>(ReformatCode)
 
 " center while page jumping up/down
 :nmap <C-d> <C-d>zz
@@ -36,6 +37,9 @@ let mapleader=" "
 
 " close buffer
 :nmap <leader>x <Action>(CloseContent)
+
+" search everywhere
+:nmap <leader>fa <Action>(SearchEverywhere)
 
 " go to file
 :nmap <leader>ff <Action>(GotoFile)
