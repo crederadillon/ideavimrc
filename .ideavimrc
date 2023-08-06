@@ -20,6 +20,15 @@ let mapleader=" "
 " toggle the breakpoint on the current line
 :nmap <leader>bp <Action>(ToggleLineBreakpoint)
 
+" resume
+:nmap <leader>sy <Action>(Resume)
+" step over
+:nmap <leader>su <Action>(StepOver)
+" step into
+:nmap <leader>si <Action>(StepInto)
+" step out
+:nmap <leader>so <Action>(StepOut)
+
 " floating diagnostic
 :nmap <leader>fd <Action>(ShowErrorDescription)
 
@@ -48,7 +57,10 @@ let mapleader=" "
 :nmap <leader>fo <Action>(RecentFiles)
 
 " toggle file tree
-" :nmap <C-n> <Action>(ActivateProjectToolWindow)
+:nmap <C-n> <Action>(ActivateProjectToolWindow)
+
+" toggle terminal
+:nmap <A-i> <Action>(ActivateTerminalToolWindow)
 
 " next buffer
 :nmap <TAB> <Action>(NextTab)
@@ -66,20 +78,25 @@ let mapleader=" "
 " find in all files
 :nmap <leader>fw <Action>(FindInPath)
 
-" comments
+" find usages
+:nmap gr <Action>(FindUsages)
+
+" go to implementation
+:nmap gi <Action>(GotoImplementation)
+
+" comment
 :nmap <leader>/ <Action>(CommentByLineComment)
 :vmap <leader>/ <Action>(CommentByBlockComment)
 
 " rename
 :nmap <leader>ra <Action>(RenameElement)
 
-" run it
+" run
 :nmap <leader>ri <Action>(Run)
-" debug it
+" debug
 :nmap <leader>di <Action>(Debug)
-" stop it
+" stop
 :nmap <leader>si <Action>(Stop)
 
 " generate
 :nmap <leader>ca <Action>(Generate)
-
