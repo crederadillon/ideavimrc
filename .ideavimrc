@@ -17,23 +17,37 @@ let mapleader=" "
 :nmap n nzz
 :nmap N Nzz
 
-" toggle the breakpoint on the current line
+" toggle breakpoint on current line
 :nmap <leader>bp <Action>(ToggleLineBreakpoint)
+" toggle breakpoint on current line
+:nmap <leader>ab <Action>(ViewBreakpoints)
 
 " resume
-:nmap <leader>sy <Action>(Resume)
+:nmap <leader>sj <Action>(Resume)
 " step over
-:nmap <leader>su <Action>(StepOver)
+:nmap <leader>sk <Action>(StepOver)
 " step into
-:nmap <leader>si <Action>(StepInto)
+:nmap <leader>sl <Action>(StepInto)
 " step out
-:nmap <leader>so <Action>(StepOut)
+:nmap <leader>s; <Action>(StepOut)
 
 " floating diagnostic
 :nmap <leader>fd <Action>(ShowErrorDescription)
 
 " quick implementations
 :nmap <leader>fi <Action>(QuickImplementations)
+
+" find usages
+:nmap gr <Action>(FindUsages)
+
+" go to implementation
+:nmap gi <Action>(GotoImplementation)
+
+" rename
+:nmap <leader>ra <Action>(RenameElement)
+
+" generate
+:nmap <leader>ca <Action>(Generate)
 
 " Don't copy the replaced text after pasting in visual mode
 :xmap p p:let @+=@0<CR>:let @"=@0<CR>
@@ -56,11 +70,13 @@ let mapleader=" "
 " recent files
 :nmap <leader>fo <Action>(RecentFiles)
 
-" toggle file tree
+" open file tree
 :nmap <C-n> <Action>(ActivateProjectToolWindow)
-
-" toggle terminal
+:nmap <leader>e <Action>(ActivateProjectToolWindow)
+" open terminal
 :nmap <A-i> <Action>(ActivateTerminalToolWindow)
+" open debug window
+" :nmap <A-i> <Action>(ActivateDebugToolWindow)
 
 " next buffer
 :nmap <TAB> <Action>(NextTab)
@@ -78,18 +94,9 @@ let mapleader=" "
 " find in all files
 :nmap <leader>fw <Action>(FindInPath)
 
-" find usages
-:nmap gr <Action>(FindUsages)
-
-" go to implementation
-:nmap gi <Action>(GotoImplementation)
-
 " comment
 :nmap <leader>/ <Action>(CommentByLineComment)
 :vmap <leader>/ <Action>(CommentByBlockComment)
-
-" rename
-:nmap <leader>ra <Action>(RenameElement)
 
 " run
 :nmap <leader>ri <Action>(Run)
@@ -98,5 +105,12 @@ let mapleader=" "
 " stop
 :nmap <leader>si <Action>(Stop)
 
-" generate
-:nmap <leader>ca <Action>(Generate)
+" git blame
+:nmap <leader>gb <Action>(Annotate)
+
+" attach to process
+:nmap <leader>ap <Action>(XDebugger.AttachToProcess)
+
+:xmap <leader>y <Action>($Copy)<Esc>b
+:xmap <leader>p <Action>($Paste)<Esc>b
+:nmap <leader>p <Action>($Paste)
