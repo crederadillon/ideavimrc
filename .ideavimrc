@@ -114,3 +114,6 @@ let mapleader=" "
 :xmap <leader>y <Action>($Copy)<Esc>b
 :xmap <leader>p <Action>($Paste)<Esc>b
 :nmap <leader>p <Action>($Paste)
+
+" select in project view
+:nmap <leader>sf <Action>(SelectInProjectView)
